@@ -114,7 +114,7 @@ body, html{
 
 
 
-.realAd {
+.realFake {
     inset:0;
     padding: 8px;
     margin-top: 32px;
@@ -127,18 +127,18 @@ body, html{
     place-items: center;
     justify-content: center;
 }
-#ad1 {
+#fake1 {
     z-index: 11;
     margin-left: 32px;
     position:fixed;
 }
-#ad2Container{
+#fake2Container{
     inset:0;
     width:100%;
     position:fixed;
     height:100%;
 }
-#ad2 {
+#fake2 {
     float:right;
     margin-right:32px;
 }
@@ -152,7 +152,7 @@ body, html{
 }
 #cs2 {
     height:45%;
-    background-image: url("widgets/cs2_ad.png");
+    background-image: url("widgets/cs2_fake.png");
     background-size: cover;
     animation-name: animR;
     animation-duration: 10s;
@@ -160,7 +160,7 @@ body, html{
 }
 #discord {
     height: 55%;
-    background-image: url("widgets/discord_ad.jpg");
+    background-image: url("widgets/discord_fake.jpg");
     background-size: cover;
     animation-name: animR;
     animation-delay: 5s;
@@ -169,7 +169,7 @@ body, html{
 }
 #osu {
     height:20%;
-    background-image: url("widgets/osu_ad.png");
+    background-image: url("widgets/osu_fake.png");
     background-size: cover;
     /* background-position-x: 100%;
     animation-name: animR;
@@ -187,7 +187,7 @@ body, html{
     animation-duration: 8s;
     animation-iteration-count: infinite;
 }
-#artAd {
+#artFake {
     height:50%;
     background-image: url("widgets/iwantyou.jpg");
     background-size: cover;
@@ -235,7 +235,7 @@ body, html{
 }
 
  @media (max-width: 1720px) {
-  .realAd {
+  .realFake {
     display: none;
   }
   #toggleAd{
