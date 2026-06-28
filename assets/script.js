@@ -1,3 +1,12 @@
+const thumbList = document.getElementsByClassName("art");
+// const artList
+// const temp = document.getElementById("viewTemplate");
+
+
+for (let i = 0; i < thumbList.length; i++) {
+    console.log(thumbList[i]);
+    
+}
 function changeImage()
 {
     var img = document.getElementById("toggleAdImg");
@@ -7,7 +16,6 @@ function changeImage()
     else {
         img.setAttribute('src', "assets/widgets/enable_ads.gif");
     }
-// img.style.backgroundImage = "url('assets/widgets/enable_ads.gif')"
 }
 
 function toggleAds()
@@ -28,6 +36,17 @@ function toggleAds()
     }
 }
 
+function openImage(art)
+{
+    const thumbPath = art.getAttribute('src')
+    const path = thumbPath.replace("-thumb","");
+    console.log(path);
+    let temp = document.getElementsByTagName("template")[0];
+    let clon = temp.content.cloneNode(true);
+    document.body.appendChild(clon);
+    document.getElementById("artpiece").setAttribute('src', path);
+    
+}
 document.getElementById("fake1").style.display = localStorage.getItem("ads");
 document.getElementById("fake2").style.display = localStorage.getItem("ads");
 if (localStorage.getItem("ads") === "none") {

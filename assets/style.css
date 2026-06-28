@@ -219,6 +219,20 @@ body{
     filter:brightness(100%);
 }
 
+#artViewer{
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: #000;
+    justify-content: center;
+}
+#artpiece{
+    object-fit: contain;
+}
+
 @keyframes animR {
   0%   {background-position-x: 0px;}
   25%  {background-position-x: 100%;}
@@ -233,9 +247,6 @@ body{
 }
 
  @media (max-width: 1720px) {
-  /* .realFake {
-    display: none;
-  } */
   #toggleAd{
     display: none;
   }

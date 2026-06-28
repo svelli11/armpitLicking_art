@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>noelles art</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/yW7XTQx/sword.png">
     <link rel="stylesheet" href="assets/style.css">
     <link href="assets/landscape.css" rel="stylesheet" media="(min-width: 1720px)" />
 </head>
@@ -18,7 +19,9 @@
             <img class="divider" src="assets/widgets/firedivider.gif">
         </div>
     </header>
+    
     <div id="bg"></div>
+
     <div id="fake1" class="realFake">
         <a href="https://www.counter-strike.net/cs2" id="cs2" class="sideLink"></a>
         <a href="https://discord.com/users/1131423380923494460" id="discord" class="sideLink"></a>
@@ -30,26 +33,47 @@
             <a href="https://osu.ppy.sh/teams/21507" id="artFake" class="sideLink"></a> <!-- maybe replace with latest youtube or artpiece IDFK -->
         </div>
     </div>
+
     <div id="contentContainer">
         <div id="main">
             <div class="noise-texture"></div>
             <div class="artContainer">
-                <img class="art"src="assets/art/kochiya_cute-thumb.jpg"/>
+                <img class="art"src="assets/art/kochiya_cute-thumb.jpg" onclick="openImage(this)"/>
             </div>
             <div class="artContainer">
-                <img class="art"src="assets/art/mona_birthday-thumb.jpg"/>
+                <img class="art"src="assets/art/mona_birthday-thumb.jpg" onclick="openImage(this)"/>
             </div>
             <div class="artContainer">
-                <img class="art"src="assets/art/okiri_dokiri-thumb.jpg"/>
+                <img class="art"src="assets/art/okiri_dokiri-thumb.jpg" onclick="openImage(this)"/>
             </div>
             <div class="artContainer">
-                <img class="art"src="assets/art/b805760bb9b13cdde3d754e2d9975478-thumb.jpg"/>
+                <img class="art"src="assets/art/b805760bb9b13cdde3d754e2d9975478-thumb.jpg" onclick="openImage(this)"/>
             </div>
         </div>
     </div>
+
     <button id="toggleAd" onclick="changeImage();toggleAds();">
         <img src="assets/widgets/disable_ads.gif" id="toggleAdImg">
     </button>
+
+    <!-- <div id="artViewer">
+        <img src="" alt="" id="artpiece">
+        <div id="artDescription"></div>
+        <div id="viewExit"></div>
+        <div id="viewLeft" class="viewButton"></div>
+        <div id="viewRight" class="viewButton"></div>
+    </div> -->
+
+    <template id="viewTemplate">
+        <div id="artViewer">
+            <img src="" alt="" id="artpiece">
+            <div id="artDescription"></div>
+            <div id="viewExit"></div>
+            <div id="viewLeft" class="viewButton"></div>
+            <div id="viewRight" class="viewButton"></div>
+        </div>
+    </template>
+
     <svg width="0" height="0" style="position: absolute;">
         <filter id="noise-texture">
             <feTurbulence 
