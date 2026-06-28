@@ -52,7 +52,7 @@ body{
     display:flex;
     flex-wrap: wrap;
     position:relative;
-    padding: 32px 32px 32px 32px;
+    padding: 32px 0px 0px 32px;
     border: 1px solid;
     background-color: #080809a0;
     border-color: #707070;
@@ -74,9 +74,7 @@ body{
 
 .art {
     filter: brightness(75%);
-    /* margin-bottom: 32px;
-    margin-right: 32px; */
-    /* height:auto; */
+
     max-width:180px;
     max-height:180px;
     z-index: 2;
@@ -90,6 +88,8 @@ body{
     width: 180px;
     height: 180px;
     display: flex;
+    margin-bottom: 32px;
+    margin-right: 32px;
     place-items: center;
     justify-content: center;
 }
