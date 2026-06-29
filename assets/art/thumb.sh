@@ -2,6 +2,7 @@
 # Sets the desired thumbnail width
 WIDTH=270
 # Loops through all jpg files in current folder
+# CHANGE TO WEBP
 for i in *.jpg
 do
     # Stores the width of the current file

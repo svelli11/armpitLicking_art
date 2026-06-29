@@ -1,16 +1,16 @@
 // const temp = document.getElementById("viewTemplate");
 // add nsfw art toggle
 
+// roulette with screamer chance  
+
+//get rid of viewLeft or viewRight depending on index in list
+let artIndex;
 const thumbList = document.getElementsByClassName("art");
 const artList = [];
 for (let i = 0; i < thumbList.length; i++) {
-    const thumbPath = (thumbList[i].getAttribute('src'));
-    console.log(thumbPath);
-    
-    artList.push(thumbPath.replace("-thumb",""));
-    
+    path = getArtPath(thumbList[i])
+    artList.push(path);
 }
-console.log(artList);
 
 function getArtPath(art)
 {
@@ -23,7 +23,7 @@ function getArtPath(art)
     return path;
 }
 
-function changeImage()
+function swapAdBlockWidget()
 {
     var img = document.getElementById("toggleAdImg");
     if (img.getAttribute('src') === "assets/widgets/enable_ads.gif") {
@@ -52,19 +52,57 @@ function toggleAds()
     }
 }
 
+function checkArtIndex(){
+    if (artIndex === 0) {
+        console.log("disable left");
+        document.getElementById("viewLeft").style.display="none";
+    }
+    else if (artIndex === artList.length-1) {
+        console.log("disable right");
+        document.getElementById("viewRight").style.display="none";
+    }
+    else {
+        document.getElementById("viewRight").style.display="";
+        document.getElementById("viewLeft").style.display="";
+    }
+}
+
 function openImage(art)
 {
     const path = getArtPath(art)
     console.log(path);
-    //prepend png- to png thumbs
-    // if has png, replace jpg along with removing thumb
+
     let temp = document.getElementsByTagName("template")[0];
     let clon = temp.content.cloneNode(true);
     document.body.appendChild(clon);
-    
+
     document.getElementById("artpiece").setAttribute('src', path);
+
+    for (let i = 0; i < artList.length; i++) {
+        if (artList[i] === path) {
+            artIndex = i;
+            console.log("path found!!!!!! at index of", artIndex);
+            checkArtIndex();
+            return;
+        } 
+    }
+    console.log("path not found");
+}
+
+function changeArtImage(d)
+{
+    if (d === 1) {
+        artIndex -= 1;
+    }
+    if (d === 2) {
+        artIndex += 1;
+    }
+    console.log(artIndex);
+    checkArtIndex();
+    document.getElementById("artpiece").setAttribute('src', artList[artIndex]);
     
 }
+
 function closeArtViewer()
 {
     document.getElementById('artViewer').remove();
