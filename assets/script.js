@@ -1,5 +1,9 @@
 // const temp = document.getElementById("viewTemplate");
-// add nsfw art toggle
+// add nsfw art toggle 
+// do "nsfw-" prepend for nsfw images
+// -- do nsfw classes and toggle by changing display style? (faster)
+// -- do a reload of all thumbnails and include or dont include nsfw images? (better for initial load)
+// i think latter, because i dont want ppl cacheing nsfw images if they dont want to
 
 // roulette with screamer chance  
 
@@ -19,7 +23,6 @@ for (let i = 0; i < thumbList.length; i++) {
     artList.push(path);
 }
 console.log(artList);
-
 
 function getArtPath(art)
 {
@@ -123,3 +126,16 @@ document.getElementById("fake2").style.display = localStorage.getItem("ads");
 if (localStorage.getItem("ads") === "none") {
     document.getElementById("toggleAdImg").setAttribute('src', "assets/widgets/enable_ads.gif");
 }
+// ripped from so
+// let obj;
+// async function foo() {
+
+//   const res = await fetch('assets/art/thumbnails.json')
+
+//   obj = await res.json();
+// //   console.log(obj)
+//   return obj
+// }
+
+// console.log(foo());
+

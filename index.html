@@ -90,6 +90,19 @@
             <feBlend mode="multiply" in="SourceGraphic"/>
         </filter>
     </svg>
-    <script src="assets/script.js"></script>
+    <script src="assets/script.js" ></script>
+    <script type="module">
+        // A function to get data from a URL
+        async function getData(url) {
+            const x = await fetch(url)  // We wait for the data to arrive
+            return await x.json()  // We wait for the data to convert to JSON
+        }
+
+        // We wait for the data to arrive
+        const data = await getData("assets/art/thumbnails.json")
+
+        // We log/print the arrived JSON data
+        console.log(data)
+    </script>
 </body>
 </html>
